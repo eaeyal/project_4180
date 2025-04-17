@@ -151,7 +151,7 @@
         this->delaySize = size;
         this->delayFreeable = freeable;
         //Of course, the non-deprecated option doesn't exist
-        delay.attach(callback(this, &uLCD::writeBack), std::chrono::microseconds(delay_us));
+delay.attach(callback(this, &uLCD::writeBack), delay_us / 1000000.0f); // µs to seconds
     }
 
     //Text Functions
